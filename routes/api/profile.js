@@ -10,7 +10,7 @@ const { get } = require('request');
 const { response } = require('express');
 
 // @route   GET api/profile/me
-// @desc    Get current users prpfile
+// @desc    Get current users profile
 // @acess   Private
 router.get('/me', auth, async (req, res) => {
   try {
@@ -22,6 +22,8 @@ router.get('/me', auth, async (req, res) => {
     if (!profile) {
       return res.status(400).json({ msg: 'There is no profile for this user' });
     }
+
+    res.json(profile);
   } catch (err) {
     console.log(err.message);
     res.status(500).send('Server Error');
