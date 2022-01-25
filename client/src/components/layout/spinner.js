@@ -4,7 +4,7 @@ import spinner from './spinner.gif';
 export default () => (
   <Fragment>
     <img
-      rc={spinner}
+      src={spinner}
       style={{ width: '200px', margin: 'auto', display: 'block' }}
       alt='Loading...'
     />
